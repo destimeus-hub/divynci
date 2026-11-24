@@ -93,7 +93,7 @@ export const RangeShowcase: React.FC = () => {
         {/* HERO HEADER */}
         <div className="text-center max-w-3xl mx-auto space-y-5">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FDFBF7] border border-[#E5DEC9] text-xs font-mono tracking-wider uppercase text-[#0D2818]">
-            <Sparkles className="w-3.5 h-3.5 text-[#4A5D4E]" />
+            <Sparkles className="w-3.5 h-3.5 text-[#B8902A]" />
             <span>BUSINESS SITUATIONS & EXPERIENCES</span>
           </div>
 
@@ -125,7 +125,7 @@ export const RangeShowcase: React.FC = () => {
                   onClick={() => setSelectedId(sit.id)}
                   className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-mono tracking-wider transition-all duration-300 border ${
                     active
-                      ? "bg-[#0D2818] text-[#FDFBF7] border-[#0D2818] shadow-md scale-105"
+                      ? "bg-[#0D2818] text-[#FDFBF7] border-[#B8902A] shadow-md scale-105 ring-1 ring-[#B8902A]/30"
                       : "bg-[#FDFBF7] text-[#0D2818] border-[#E5DEC9] hover:border-[#0D2818] hover:bg-[#F4EFEA]"
                   }`}
                 >
@@ -149,8 +149,8 @@ export const RangeShowcase: React.FC = () => {
                 {/* LEFT COLUMN: EDITORIAL THINKING & STRUCTURE */}
                 <div className="lg:col-span-6 space-y-8">
                   {/* SITUATION */}
-                  <div className="space-y-2 border-l-2 border-[#0D2818] pl-4">
-                    <div className="text-xs font-mono font-bold tracking-widest text-[#4A5D4E] uppercase">
+                  <div className="space-y-2 border-l-2 border-[#B8902A] pl-4">
+                    <div className="text-xs font-mono font-bold tracking-widest text-[#B8902A] uppercase">
                       THE SITUATION
                     </div>
                     <p className="text-lg sm:text-xl text-[#0D2818] font-medium leading-snug">

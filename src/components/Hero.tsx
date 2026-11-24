@@ -376,7 +376,7 @@ export const Hero: React.FC = () => {
             >
               <a
                 href="#experience"
-                className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#163B2C] text-[#F5F1E8] font-mono font-medium text-[11px] tracking-wider uppercase hover:bg-[#0E271D] border border-[#2B5441] transition-all duration-200 flex items-center justify-center gap-2.5 group shadow-lg"
+                className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#163B2C] text-[#F5F1E8] font-mono font-medium text-[11px] tracking-wider uppercase hover:bg-[#0E271D] border border-[#B8902A]/50 hover:border-[#B8902A] transition-all duration-200 flex items-center justify-center gap-2.5 group shadow-lg ring-1 ring-[#B8902A]/20"
               >
                 <span>BUILD YOUR EXPERIENCE</span>
                 <ArrowRight className="w-3.5 h-3.5 text-[#F5F1E8] group-hover:translate-x-0.5 transition-transform" />

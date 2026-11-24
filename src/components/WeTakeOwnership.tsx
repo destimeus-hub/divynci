@@ -11,7 +11,7 @@ export const WeTakeOwnership: React.FC = () => {
         {/* HEADER */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F4EFEA] border border-[#E5DEC9] text-xs font-mono text-[#0D2818]">
-            <Sparkles className="w-3.5 h-3.5 text-[#4A5D4E]" />
+            <Sparkles className="w-3.5 h-3.5 text-[#B8902A]" />
             <span className="tracking-widest uppercase font-semibold">WE TAKE OWNERSHIP</span>
           </div>
           <h2 className="text-4xl sm:text-6xl font-extrabold text-[#0D2818] tracking-tight serif-font leading-[1.08]">
@@ -69,8 +69,10 @@ export const WeTakeOwnership: React.FC = () => {
           </div>
 
           {/* DIVYNCI */}
-          <div className="p-8 rounded-3xl bg-[#0D2818] text-[#FDFBF7] space-y-4 shadow-md">
-            <span className="text-xs font-bold text-[#E5DEC9] uppercase tracking-widest block border-b border-[#E5DEC9]/30 pb-3">
+          <div className="p-8 rounded-3xl bg-[#0D2818] text-[#FDFBF7] space-y-4 shadow-md relative overflow-hidden">
+            {/* Gold shimmer top line */}
+            <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#B8902A] to-transparent" />
+            <span className="text-xs font-bold text-[#B8902A] uppercase tracking-widest block border-b border-[#E5DEC9]/30 pb-3">
               DIVYNCI OWNS
             </span>
             <div className="grid grid-cols-2 gap-2 text-[#FDFBF7]">
@@ -80,7 +82,7 @@ export const WeTakeOwnership: React.FC = () => {
               <span>• PRODUCTION</span>
               <span>• TECHNICAL BUILD</span>
               <span>• LAUNCH</span>
-              <span className="col-span-2 text-[#E5DEC9]">• MEASUREMENT &amp; ITERATION</span>
+              <span className="col-span-2 text-[#B8902A]">• MEASUREMENT &amp; ITERATION</span>
             </div>
           </div>
         </div>

@@ -11,7 +11,7 @@ export const DivynciDifference: React.FC = () => {
         {/* HEADER */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FDFBF7] border border-[#E5DEC9] text-xs font-mono text-[#0D2818]">
-            <Sparkles className="w-3.5 h-3.5 text-[#4A5D4E]" />
+            <Sparkles className="w-3.5 h-3.5 text-[#B8902A]" />
             <span className="tracking-widest uppercase font-semibold">THE DIVYNCI DIFFERENCE</span>
           </div>
           <h2 className="text-4xl sm:text-6xl font-extrabold text-[#0D2818] tracking-tight serif-font leading-[1.08]">
@@ -21,8 +21,10 @@ export const DivynciDifference: React.FC = () => {
         </div>
 
         {/* CORE PHILOSOPHY STATEMENT CARD */}
-        <div className="p-10 sm:p-16 rounded-3xl bg-[#0D2818] text-[#FDFBF7] space-y-8 text-center shadow-xl">
-          <span className="text-xs font-mono font-bold text-[#E5DEC9] uppercase tracking-widest block">
+        <div className="p-10 sm:p-16 rounded-3xl bg-[#0D2818] text-[#FDFBF7] space-y-8 text-center shadow-xl relative overflow-hidden">
+          {/* Gold accent line top */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-0.5 bg-gradient-to-r from-transparent via-[#B8902A] to-transparent" />
+          <span className="text-xs font-mono font-bold text-[#B8902A] uppercase tracking-widest block">
             OUR CENTRAL PHILOSOPHY
           </span>
           <h3 className="text-2xl sm:text-4xl font-extrabold serif-font tracking-tight leading-snug">

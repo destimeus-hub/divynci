@@ -14,18 +14,18 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full bg-[#193A2A] flex items-center justify-center text-[#FAF8F2] font-serif font-bold text-sm">
+            <div className="w-8 h-8 rounded-full bg-[#193A2A] flex items-center justify-center text-[#FAF8F2] font-serif font-bold text-sm ring-1 ring-[#B8902A]/40">
               D
             </div>
             <div>
-              <span className="font-bold tracking-widest text-sm text-[#193A2A]">DIVYNCI</span>
+              <span className="font-bold tracking-widest text-sm text-[#193A2A]">DIV<span className="text-[#B8902A]">Y</span>NCI</span>
               <div className="text-[10px] text-[#77766F]">GROWTH & INTERACTIVE STUDIO FOR CONSUMER BRANDS</div>
             </div>
           </div>
 
           <div className="flex items-center gap-8 text-[11px] text-[#193A2A]">
-            <span>14-DAY GUARANTEED DEPLOYMENT</span>
-            <span>KLAVIYO & SHOPIFY CERTIFIED</span>
+            <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-[#B8902A] inline-block" />14-DAY GUARANTEED DEPLOYMENT</span>
+            <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-[#B8902A] inline-block" />KLAVIYO & SHOPIFY CERTIFIED</span>
           </div>
 
           <button

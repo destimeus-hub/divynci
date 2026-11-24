@@ -13,6 +13,11 @@
     --brand-forest-hover: #122a1e;
     --brand-sage: #315B43;
     --brand-sage-light: #A7B5A1;
+    /* 10% accent — antique editorial gold */
+    --accent-gold: #B8902A;
+    --accent-gold-light: #D4AA4A;
+    --accent-gold-pale: #F0E4C4;
+    --accent-gold-dark: #8C6B1A;
   }
 
   body {
@@ -66,6 +71,14 @@
 
 .border-sand {
   border-color: #DDD7CA;
+}
+
+/* Accent gold utilities */
+.accent-gold { color: #B8902A; }
+.bg-accent-gold { background-color: #B8902A; }
+.border-accent-gold { border-color: #B8902A; }
+.accent-gold-gradient {
+  background: linear-gradient(135deg, #B8902A 0%, #D4AA4A 100%);
 }
 
 .serif-font {

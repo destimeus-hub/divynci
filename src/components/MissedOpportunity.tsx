@@ -11,7 +11,7 @@ export const MissedOpportunity: React.FC = () => {
         {/* HEADER */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F4EFEA] border border-[#E5DEC9] text-xs font-mono text-[#0D2818]">
-            <Sparkles className="w-3.5 h-3.5 text-[#4A5D4E]" />
+            <Sparkles className="w-3.5 h-3.5 text-[#B8902A]" />
             <span className="tracking-widest uppercase font-semibold">THE MISSED OPPORTUNITY</span>
           </div>
           <h2 className="text-4xl sm:text-6xl font-extrabold text-[#0D2818] tracking-tight serif-font leading-[1.08]">
@@ -52,7 +52,7 @@ export const MissedOpportunity: React.FC = () => {
               className="p-8 rounded-3xl bg-[#F4EFEA] border border-[#E5DEC9] space-y-4 text-left flex flex-col justify-between hover:border-[#0D2818]/40 transition-colors"
             >
               <div className="space-y-2">
-                <span className="text-xs font-mono font-bold text-[#4A5D4E] tracking-wider block">
+                <span className="text-xs font-mono font-bold text-[#B8902A] tracking-wider block">
                   {item.step} / {item.title}
                 </span>
                 <h3 className="text-xl font-bold text-[#0D2818] serif-font">
@@ -77,7 +77,7 @@ export const MissedOpportunity: React.FC = () => {
               className="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#0D2818] uppercase tracking-wider hover:text-[#4A5D4E] transition-colors group"
             >
               <span>SEE WHAT&apos;S BEING MISSED</span>
-              <ArrowRight className="w-4 h-4 text-[#4A5D4E] group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 text-[#B8902A] group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
         </div>

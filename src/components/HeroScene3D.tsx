@@ -10,6 +10,7 @@ const FOREST = new THREE.Color("#163B2C");
 const SAGE = new THREE.Color("#2B5441");
 const TAN = new THREE.Color("#C8BFB0");
 const CREAM = new THREE.Color("#F5F0E8");
+const GOLD = new THREE.Color("#B8902A");
 
 // ─── Floating Orb ────────────────────────────────────────────────────────────
 interface OrbData {
@@ -31,8 +32,8 @@ function FloatingOrbs({ scrollProgress }: { scrollProgress: React.MutableRefObje
       [FOREST.clone(), SAGE.clone()],
       [TAN.clone(), CREAM.clone()],
       [SAGE.clone(), PARCHMENT.clone()],
-      [FOREST.clone(), TAN.clone()],
-      [CREAM.clone(), SAGE.clone()],
+      [GOLD.clone(), TAN.clone()],
+      [CREAM.clone(), GOLD.clone()],
       [TAN.clone(), FOREST.clone()],
     ];
     for (let i = 0; i < 6; i++) {
@@ -120,7 +121,7 @@ function ParticleField({ scrollProgress }: { scrollProgress: React.MutableRefObj
     const colors = new Float32Array(COUNT * 3);
     const sizes = new Float32Array(COUNT);
 
-    const palette = [FOREST, SAGE, TAN, CREAM];
+    const palette = [FOREST, SAGE, TAN, CREAM, GOLD];
 
     for (let i = 0; i < COUNT; i++) {
       positions[i * 3 + 0] = (Math.random() - 0.5) * 24;

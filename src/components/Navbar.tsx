@@ -33,11 +33,11 @@ export const Navbar: React.FC = () => {
       <div className="max-w-[1440px] mx-auto px-6 sm:px-12 md:px-16 flex items-center justify-between h-12">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-7 h-7 rounded-full bg-[#193A2A] text-[#FAF8F2] flex items-center justify-center font-serif font-bold text-xs tracking-wider shadow-xs">
+          <div className="w-7 h-7 rounded-full bg-[#193A2A] text-[#FAF8F2] flex items-center justify-center font-serif font-bold text-xs tracking-wider shadow-xs ring-1 ring-[#B8902A]/30 group-hover:ring-[#B8902A]/70 transition-all">
             D
           </div>
           <span className="font-bold tracking-[0.22em] text-sm uppercase text-[#193A2A]">
-            DIVYNCI
+            DIVY<span className="text-[#B8902A]">N</span>CI
           </span>
         </Link>
 
@@ -67,7 +67,7 @@ export const Navbar: React.FC = () => {
         <div className="hidden md:flex items-center gap-4">
           <a
             href="#project-questionnaire"
-            className="px-4.5 py-2 rounded-full bg-[#193A2A] text-[#FAF8F2] font-mono font-medium text-[11px] tracking-wider uppercase hover:bg-[#122a1e] transition-all shadow-xs flex items-center gap-2"
+            className="px-4.5 py-2 rounded-full bg-[#193A2A] text-[#FAF8F2] font-mono font-medium text-[11px] tracking-wider uppercase hover:bg-[#122a1e] transition-all shadow-xs flex items-center gap-2 ring-1 ring-[#B8902A]/40 hover:ring-[#B8902A]/80"
           >
             <span>START A PROJECT</span>
             <ArrowRight className="w-3 h-3" />

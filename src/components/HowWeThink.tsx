@@ -14,7 +14,7 @@ export const HowWeThink: React.FC = () => {
         {/* HEADER */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F4EFEA] border border-[#E5DEC9] text-xs font-mono text-[#0D2818]">
-            <Sparkles className="w-3.5 h-3.5 text-[#4A5D4E]" />
+            <Sparkles className="w-3.5 h-3.5 text-[#B8902A]" />
             <span className="tracking-widest uppercase font-semibold">HOW WE THINK</span>
           </div>
           <h2 className="text-4xl sm:text-6xl font-extrabold text-[#0D2818] tracking-tight serif-font leading-[1.08]">
@@ -34,7 +34,7 @@ export const HowWeThink: React.FC = () => {
             </span>
             <button
               onClick={() => setIsDistilled(!isDistilled)}
-              className="text-[#4A5D4E] font-bold hover:underline flex items-center gap-1.5 cursor-pointer"
+              className="text-[#B8902A] font-bold hover:underline flex items-center gap-1.5 cursor-pointer"
             >
               <Sparkles className="w-3.5 h-3.5" />
               <span>{isDistilled ? "RESET CONTEXT" : "DISTILL STRATEGIC TENSION"}</span>
@@ -103,8 +103,8 @@ export const HowWeThink: React.FC = () => {
             { step: "02", title: "STRATEGIC TENSION", desc: "DIVYNCI identifies the hidden friction point causing attention loss." },
             { step: "03", title: "THE EXPERIENCE", desc: "We design and build the exact physical or digital intervention needed." },
           ].map((item) => (
-            <div key={item.step} className="p-6 rounded-2xl bg-[#F4EFEA] border border-[#E5DEC9] space-y-2 text-left">
-              <span className="text-xs font-mono font-bold text-[#4A5D4E] uppercase tracking-wider block">
+            <div key={item.step} className={`p-6 rounded-2xl border space-y-2 text-left ${item.step === "03" ? "bg-[#F0E4C4]/40 border-[#B8902A]/30" : "bg-[#F4EFEA] border-[#E5DEC9]"}`}>
+              <span className={`text-xs font-mono font-bold uppercase tracking-wider block ${item.step === "03" ? "text-[#B8902A]" : "text-[#4A5D4E]"}`}>
                 {item.step} / {item.title}
               </span>
               <p className="text-xs text-[#0D2818] font-sans font-medium leading-relaxed">
