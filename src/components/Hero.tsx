@@ -9,14 +9,20 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import dynamic from "next/dynamic";
+
+// Dynamically import the 3D scene (SSR=false since it uses WebGL)
+const HeroScene3D = dynamic(
+  () => import("./HeroScene3D").then((m) => m.HeroScene3D),
+  { ssr: false }
+);
 
 export const Hero: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  const [videoLoaded, setVideoLoaded] = useState(false);
-  const [videoDuration, setVideoDuration] = useState(0);
   const [isReducedMotion, setIsReducedMotion] = useState(false);
+
+  // Shared scroll progress ref passed into the 3D scene
+  const scrollProgressRef = useRef(0);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -37,49 +43,10 @@ export const Hero: React.FC = () => {
     return () => mq.removeEventListener("change", handler);
   }, []);
 
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    const onMeta = () => {
-      setVideoDuration(video.duration || 10);
-      setVideoLoaded(true);
-      video.pause();
-    };
-    if (video.readyState >= 1) onMeta();
-    else video.addEventListener("loadedmetadata", onMeta);
-    return () => video.removeEventListener("loadedmetadata", onMeta);
-  }, []);
-
-  const targetTimeRef = useRef(0);
-  const rafRef = useRef<number | null>(null);
-
+  // Keep the ref in sync with the spring value so the 3D scene can read it
   useMotionValueEvent(smoothProgress, "change", (latest) => {
-    if (!videoLoaded || !videoDuration || isReducedMotion) return;
-    targetTimeRef.current = Math.min(
-      Math.max(latest * videoDuration, 0),
-      videoDuration - 0.05
-    );
+    scrollProgressRef.current = latest;
   });
-
-  useEffect(() => {
-    if (!videoLoaded || isReducedMotion) return;
-    let last = -1;
-    const tick = () => {
-      const v = videoRef.current;
-      if (v && v.readyState >= 2) {
-        const t = targetTimeRef.current;
-        if (Math.abs(v.currentTime - t) > 0.012 && Math.abs(t - last) > 0.001) {
-          v.currentTime = t;
-          last = t;
-        }
-      }
-      rafRef.current = requestAnimationFrame(tick);
-    };
-    rafRef.current = requestAnimationFrame(tick);
-    return () => {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    };
-  }, [videoLoaded, isReducedMotion]);
 
   // --- Motion values ---
   // Opening (0-9%) LEFT
@@ -124,7 +91,7 @@ export const Hero: React.FC = () => {
 
   // Final (93-100%) CENTER - Staggered Reveal Sequence
   const t7_container_opacity = useTransform(smoothProgress, [0.93, 0.96, 1], [0, 1, 1]);
-  
+
   // 4. DIVYNCI appears softly
   const t7_brand_opacity = useTransform(smoothProgress, [0.93, 0.955, 1], [0, 1, 1]);
   const t7_brand_y = useTransform(smoothProgress, [0.93, 0.955, 1], [14, 0, 0]);
@@ -155,16 +122,21 @@ export const Hero: React.FC = () => {
       className="relative w-full h-[450vh] bg-[#F3EFE6] text-[#163B2C]"
     >
       <div className="sticky top-0 left-0 w-full h-screen h-[100svh] overflow-hidden">
-        {/* Cinematic video - no overlays */}
-        <video
-          ref={videoRef}
-          src="/herovideo.mp4"
-          playsInline
-          muted
-          preload="auto"
-          autoPlay={isReducedMotion}
-          loop={isReducedMotion}
-          className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none"
+
+        {/* ── 3D Interactive Background ── */}
+        {!isReducedMotion && (
+          <HeroScene3D scrollProgress={scrollProgressRef} />
+        )}
+
+        {/* Warm parchment gradient overlay – keeps text legible over the 3D scene */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 60% at 50% 50%, rgba(243,239,230,0) 0%, rgba(243,239,230,0.35) 100%),
+              linear-gradient(to bottom, rgba(243,239,230,0.08) 0%, rgba(243,239,230,0.12) 100%)
+            `,
+          }}
         />
 
         <div className="relative z-10 w-full h-full pointer-events-none">
@@ -219,7 +191,7 @@ export const Hero: React.FC = () => {
             </p>
           </motion.div>
 
-          {/* ---- 01 EXPERIENCE: RIGHT ---- */}
+          {/* ---- 01 EXPERIENCE: CENTER ---- */}
           <motion.div
             style={{ opacity: t1_opacity, y: t1_y, scale: t1_scale }}
             className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 pointer-events-auto"
@@ -237,7 +209,7 @@ export const Hero: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* ---- 02 INTERACTION: LEFT ---- */}
+          {/* ---- 02 INTERACTION: CENTER ---- */}
           <motion.div
             style={{ opacity: t2_opacity, y: t2_y, scale: t2_scale }}
             className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 pointer-events-auto"
@@ -255,7 +227,7 @@ export const Hero: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* ---- 03 UNDERSTANDING: RIGHT ---- */}
+          {/* ---- 03 UNDERSTANDING: CENTER ---- */}
           <motion.div
             style={{ opacity: t3_opacity, y: t3_y, scale: t3_scale }}
             className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 pointer-events-auto"
@@ -272,7 +244,7 @@ export const Hero: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* ---- 04 RELEVANCE: LEFT ---- */}
+          {/* ---- 04 RELEVANCE: CENTER ---- */}
           <motion.div
             style={{ opacity: t4_opacity, y: t4_y, scale: t4_scale }}
             className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 pointer-events-auto"
@@ -290,7 +262,7 @@ export const Hero: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* ---- 05 ACTION: RIGHT ---- */}
+          {/* ---- 05 ACTION: CENTER ---- */}
           <motion.div
             style={{ opacity: t5_opacity, y: t5_y, scale: t5_scale }}
             className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 pointer-events-auto"
@@ -305,7 +277,7 @@ export const Hero: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* ---- 06a GROWTH: LEFT ---- */}
+          {/* ---- 06a GROWTH: CENTER ---- */}
           <motion.div
             style={{ opacity: t6a_opacity, y: t6a_y, scale: t6a_scale }}
             className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 pointer-events-auto"
@@ -320,7 +292,7 @@ export const Hero: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* ---- 06b GROWTH cont: LEFT ---- */}
+          {/* ---- 06b GROWTH cont: CENTER ---- */}
           <motion.div
             style={{ opacity: t6b_opacity, y: t6b_y, scale: t6b_scale }}
             className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 pointer-events-auto"
@@ -340,12 +312,12 @@ export const Hero: React.FC = () => {
             style={{ opacity: t7_container_opacity }}
             className="absolute inset-x-6 sm:inset-x-10 bottom-6 sm:bottom-10 md:bottom-12 max-w-xl mx-auto text-center pointer-events-auto flex flex-col items-center space-y-4 sm:space-y-5"
           >
-            {/* Subtle localized soft radial background gradient behind typography only */}
+            {/* Soft dark vignette behind final typography */}
             <div
               className="absolute -inset-x-8 -inset-y-6 -z-10 rounded-3xl pointer-events-none"
               style={{
                 background:
-                  "radial-gradient(ellipse at center, rgba(10,28,20,0.38) 0%, rgba(10,28,20,0.15) 50%, rgba(10,28,20,0) 80%)",
+                  "radial-gradient(ellipse at center, rgba(10,28,20,0.22) 0%, rgba(10,28,20,0.08) 55%, rgba(10,28,20,0) 80%)",
               }}
             />
 
@@ -354,7 +326,7 @@ export const Hero: React.FC = () => {
               style={{ opacity: t7_brand_opacity, y: t7_brand_y }}
               className="space-y-1"
             >
-              <span className="text-[11px] sm:text-[12px] font-mono tracking-[0.36em] text-[#F5F1E8]/90 font-bold uppercase block select-none">
+              <span className="text-[11px] sm:text-[12px] font-mono tracking-[0.36em] text-[#163B2C]/90 font-bold uppercase block select-none">
                 DIVYNCI
               </span>
             </motion.div>
@@ -363,7 +335,7 @@ export const Hero: React.FC = () => {
             <motion.div
               style={{ opacity: t7_sub_opacity, y: t7_sub_y }}
             >
-              <span className="text-[9px] sm:text-[10px] font-mono tracking-[0.22em] text-[#F5F1E8]/75 uppercase block select-none">
+              <span className="text-[9px] sm:text-[10px] font-mono tracking-[0.22em] text-[#163B2C]/65 uppercase block select-none">
                 INTERACTIVE GROWTH EXPERIENCES
               </span>
             </motion.div>
@@ -378,18 +350,18 @@ export const Hero: React.FC = () => {
               className="py-1"
             >
               <h2
-                className="text-[clamp(2.2rem,4.2vw,4.4rem)] font-light text-[#F5F1E8] tracking-tight leading-[1.05] serif-font select-none"
+                className="text-[clamp(2.2rem,4.2vw,4.4rem)] font-light text-[#163B2C] tracking-tight leading-[1.05] serif-font select-none"
                 style={{
                   textShadow:
-                    "0 2px 14px rgba(0,0,0,0.45), 0 1px 3px rgba(0,0,0,0.3)",
+                    "0 2px 14px rgba(243,239,230,0.6), 0 1px 3px rgba(243,239,230,0.4)",
                 }}
               >
                 TURN ATTENTION<br />
                 <span
-                  className="text-[clamp(2.5rem,4.8vw,4.9rem)] italic font-normal text-[#F5F1E8] block mt-0.5"
+                  className="text-[clamp(2.5rem,4.8vw,4.9rem)] italic font-normal text-[#163B2C] block mt-0.5"
                   style={{
                     textShadow:
-                      "0 2px 16px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.35)",
+                      "0 2px 16px rgba(243,239,230,0.7), 0 1px 3px rgba(243,239,230,0.5)",
                   }}
                 >
                   INTO GROWTH.
@@ -411,7 +383,7 @@ export const Hero: React.FC = () => {
               </a>
               <a
                 href="#range"
-                className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#F5F1E8] border border-[#F5F1E8] text-[#163B2C] font-mono font-medium text-[11px] tracking-wider uppercase hover:bg-[#EAE4D7] transition-all duration-200 flex items-center justify-center shadow-lg"
+                className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#F5F1E8]/80 backdrop-blur-sm border border-[#C8BFB0]/60 text-[#163B2C] font-mono font-medium text-[11px] tracking-wider uppercase hover:bg-[#EAE4D7] transition-all duration-200 flex items-center justify-center shadow-lg"
               >
                 SEE HOW IT WORKS
               </a>
