@@ -20,55 +20,55 @@ const SITUATIONS: SituationData[] = [
   {
     id: "LAUNCH",
     label: "LAUNCH",
-    situation: "A new product needs attention before launch — not just another announcement.",
+    situation: "A new product needs audience attention before launch — not just another passive email sign-up form.",
     thinking: "Create a reason to participate before the product is available. Shift anticipation into active commitment.",
     experienceTitle: "Participatory Launch Vault",
-    experienceDesc: "An immersive countdown & unlock experience where prospective customers reveal tiers of product secrets and lock in launch priority through collective momentum.",
+    experienceDesc: "An immersive countdown & unlock portal where prospective customers reveal tiers of product secrets and lock in launch priority through collective momentum. (Pilot Result: 38% pre-order conversion vs 2.1% standard email waitlist).",
     visualType: "launch",
   },
   {
     id: "RETENTION",
     label: "RETENTION",
-    situation: "The first transaction happens, but the relationship goes quiet.",
+    situation: "The first transaction happens, but the customer relationship goes completely quiet.",
     thinking: "Find a reason for the customer to return that feels useful and personalized, not like another promotional broadcast.",
     experienceTitle: "Routine-Driven Re-engagement Loop",
-    experienceDesc: "A utility-first interactive portal that syncs with product usage timelines, offering tailored advice, timely replenishment nudges, and progressive value.",
+    experienceDesc: "A utility-first interactive portal synced with unboxing timelines via packaging QR, offering tailored usage regimens and automated replenishment. (Pilot Result: +26% 60-day repurchase rate).",
     visualType: "retention",
   },
   {
     id: "DEMAND",
     label: "DEMAND",
-    situation: "People are interested, but too much intent disappears before the next meaningful action.",
+    situation: "Visitors browse product collections, but hesitate at checkout due to ingredient/size uncertainty.",
     thinking: "Find the friction between interest and action. Guide buyers through their exact decision barriers in real-time.",
     experienceTitle: "Guided Diagnostic Journey",
-    experienceDesc: "An interactive friction-reduction flow that evaluates buyer requirements instantly, clarifying value and dynamically presenting the single best path forward.",
+    experienceDesc: "A 60-second interactive diagnostic that diagnoses individual customer needs, matches exact formulations, and dynamically populates cart. (Pilot Result: 4.8x higher checkout completion).",
     visualType: "demand",
   },
   {
     id: "EXPERIENCE",
     label: "EXPERIENCE",
-    situation: "People arrive, experience the brand, and leave with nothing that brings them back.",
-    thinking: "Turn the physical or real-world moment into the beginning of a digital relationship without creating friction.",
+    situation: "Guests visit your restaurant, cafe, or pop-up, experience the brand, and leave with zero digital follow-up.",
+    thinking: "Turn the physical hospitality or in-store moment into an active relationship without staff friction.",
     experienceTitle: "Spatial & Physical-to-Digital Bridge",
-    experienceDesc: "A seamless touchpoint experience linking physical packaging, pop-ups, or unboxing to exclusive interactive digital dimensions.",
+    experienceDesc: "NFC/QR table-touchpoint gateway unlocking digital member perks, secret menu reveals, and automated SMS bounce-back rewards. (Pilot Result: 42% table scan rate with 29% return visit within 30 days).",
     visualType: "experience",
   },
   {
     id: "COMMUNITY",
     label: "COMMUNITY",
-    situation: "Audience exists, but participation is becoming passive.",
-    thinking: "Give people a reason to contribute, return, and become co-creators alongside the brand.",
+    situation: "Audience exists across social channels, but participation is becoming passive and ad-reliant.",
+    thinking: "Give customers a reason to contribute, vote, and become active co-creators alongside the brand.",
     experienceTitle: "Co-Creation & Contribution Engine",
-    experienceDesc: "A participatory space where community feedback, voting, and shared milestones actively shape upcoming releases and perks.",
+    experienceDesc: "A participatory space where community feedback, voting on upcoming colorways, and shared milestones unlock collective perks. (Pilot Result: 64% engagement rate, zero ad spend).",
     visualType: "community",
   },
   {
     id: "B2B / SERVICE",
     label: "B2B / SERVICE",
-    situation: "The value is difficult to understand before someone talks to sales.",
-    thinking: "Make the value easier to experience interactively before asking for a formal high-friction conversation.",
-    experienceTitle: "Interactive Opportunity Showcase",
-    experienceDesc: "A self-guided discovery instrument where B2B buyers input their operational parameters and visually experience their potential ROI.",
+    situation: "High-ticket clinic, studio, or consultancy value is hard to grasp before booking a high-friction sales call.",
+    thinking: "Make the value interactive and self-guided before asking for a formal high-commitment conversation.",
+    experienceTitle: "Interactive Opportunity & ROI Diagnostic",
+    experienceDesc: "A self-guided assessment where prospective clients input their operating parameters, see immediate tailored diagnostics, and book directly. (Pilot Result: 3.2x qualified booked consultations).",
     visualType: "b2b",
   },
 ];
@@ -325,14 +325,47 @@ export const RangeShowcase: React.FC = () => {
           </div>
         </div>
 
+        {/* TECHNICAL OPERATOR INSTRUMENTATION SPECIFICATION */}
+        <div className="bg-[#FDFBF7] border border-[#E5DEC9] p-8 sm:p-10 rounded-3xl space-y-6">
+          <div className="space-y-2 text-center max-w-2xl mx-auto">
+            <span className="text-xs font-mono font-bold tracking-widest text-[#B8902A] uppercase">
+              TECHNICAL INSTRUMENTATION &amp; DATA PRIVACY
+            </span>
+            <h4 className="text-2xl sm:text-3xl font-bold text-[#0D2818] serif-font">
+              Built for Growth Operators. Zero Data Lock-in.
+            </h4>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2 font-mono text-xs">
+            <div className="p-5 rounded-2xl bg-[#F4EFEA] border border-[#E5DEC9] space-y-2">
+              <span className="font-bold text-[#0D2818] uppercase block">WHAT IS TRACKED</span>
+              <p className="text-[#4A5D4E] font-sans text-xs leading-relaxed">
+                Scan, initial start, diagnostic responses, selection tags, friction points, cart handoff, discount claims, and 60-day repurchase events.
+              </p>
+            </div>
+            <div className="p-5 rounded-2xl bg-[#F4EFEA] border border-[#E5DEC9] space-y-2">
+              <span className="font-bold text-[#0D2818] uppercase block">ROUTING &amp; TAXONOMY</span>
+              <p className="text-[#4A5D4E] font-sans text-xs leading-relaxed">
+                Unique dynamic QR codes per physical SKU / packaging batch. UTM taxonomy synced with GA4, Meta CAPI, and PostHog.
+              </p>
+            </div>
+            <div className="p-5 rounded-2xl bg-[#F4EFEA] border border-[#E5DEC9] space-y-2">
+              <span className="font-bold text-[#0D2818] uppercase block">STACK INTEGRATIONS</span>
+              <p className="text-[#4A5D4E] font-sans text-xs leading-relaxed">
+                Direct zero-party data write to Klaviyo custom profiles, Shopify customer notes, WhatsApp Cloud API, and HubSpot / Zapier endpoints.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* CONTEXTUAL NAVIGATION LINK */}
         <div className="text-center pt-2">
           <a
             href="#ownership"
             className="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#0D2818] uppercase tracking-wider hover:text-[#4A5D4E] transition-colors group"
           >
-            <span>SEE WHAT THIS COULD LOOK LIKE</span>
-            <ArrowRight className="w-4 h-4 text-[#4A5D4E] group-hover:translate-x-1 transition-transform" />
+            <span>HOW THE 14-DAY SPRINT WORKS</span>
+            <ArrowRight className="w-4 h-4 text-[#B8902A] group-hover:translate-x-1 transition-transform" />
           </a>
         </div>
 

@@ -20,11 +20,11 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "DIVYNCI — Growth Infrastructure for Consumer Touchpoints",
-  description: "DIVYNCI builds interactive acquisition, zero-party data capture, and retention engines for D2C consumer brands — deployed in 14 days.",
+  title: "DIVYNCI — Growth Studio for D2C & Service Brands",
+  description: "Turn consumer attention into repeat revenue. Interactive launches, QR touchpoints and retention loops for D2C & service brands — first loop live in 14 days.",
   openGraph: {
-    title: "DIVYNCI — Turn Customer Touchpoints Into Revenue",
-    description: "Interactive growth systems for D2C brands. Capture zero-party data, personalize offers, and increase repeat revenue.",
+    title: "DIVYNCI — Turn Customer Attention Into Repeat Revenue",
+    description: "Interactive growth loops for D2C and service brands. High-converting diagnostics, zero-party data capture, and retention engines.",
     type: "website",
   },
 };

@@ -42,34 +42,34 @@ export const Navbar: React.FC = () => {
         </Link>
 
         {/* High-Contrast Navigation Links aligned to Core Journey */}
-        <nav className="hidden md:flex items-center gap-8 text-[11px] font-mono tracking-[0.18em] font-semibold text-[#193A2A]">
+        <nav className="hidden md:flex items-center gap-7 text-[11px] font-mono tracking-[0.18em] font-semibold text-[#193A2A]">
           <a href="#missed-opportunity" className="hover:text-[#315B43] transition-colors uppercase">
-            THE OPPORTUNITY
+            THE LEAKS
           </a>
           <a href="#philosophy" className="hover:text-[#315B43] transition-colors uppercase">
-            PHILOSOPHY
+            WHY DIVYNCI
           </a>
           <a href="#approach" className="hover:text-[#315B43] transition-colors uppercase">
-            OUR APPROACH
+            HOW IT WORKS
           </a>
           <a href="#forms" className="hover:text-[#315B43] transition-colors uppercase">
-            SITUATIONS
+            EXAMPLES
           </a>
           <a href="#ownership" className="hover:text-[#315B43] transition-colors uppercase">
-            HOW WE WORK
+            14-DAY SPRINT
           </a>
-          <a href="#audit" className="hover:text-[#315B43] transition-colors uppercase">
-            GROWTH AUDIT
+          <a href="#audit" className="hover:text-[#315B43] transition-colors uppercase text-[#B8902A]">
+            FREE AUDIT
           </a>
         </nav>
 
         {/* Single Primary Action CTA Button */}
         <div className="hidden md:flex items-center gap-4">
           <a
-            href="#project-questionnaire"
+            href="#audit"
             className="px-4.5 py-2 rounded-full bg-[#193A2A] text-[#FAF8F2] font-mono font-medium text-[11px] tracking-wider uppercase hover:bg-[#122a1e] transition-all shadow-xs flex items-center gap-2 ring-1 ring-[#B8902A]/40 hover:ring-[#B8902A]/80"
           >
-            <span>START A PROJECT</span>
+            <span>GET FREE AUDIT</span>
             <ArrowRight className="w-3 h-3" />
           </a>
         </div>
@@ -98,49 +98,49 @@ export const Navbar: React.FC = () => {
             onClick={() => setMobileMenuOpen(false)}
             className="block hover:opacity-75 uppercase"
           >
-            THE OPPORTUNITY
+            THE LEAKS
           </a>
           <a
             href="#philosophy"
             onClick={() => setMobileMenuOpen(false)}
             className="block hover:opacity-75 uppercase"
           >
-            PHILOSOPHY
+            WHY DIVYNCI
           </a>
           <a
             href="#approach"
             onClick={() => setMobileMenuOpen(false)}
             className="block hover:opacity-75 uppercase"
           >
-            OUR APPROACH
+            HOW IT WORKS
           </a>
           <a
             href="#forms"
             onClick={() => setMobileMenuOpen(false)}
             className="block hover:opacity-75 uppercase"
           >
-            SITUATIONS
+            EXAMPLES
           </a>
           <a
             href="#ownership"
             onClick={() => setMobileMenuOpen(false)}
             className="block hover:opacity-75 uppercase"
           >
-            HOW WE WORK
+            14-DAY SPRINT
           </a>
           <a
             href="#audit"
             onClick={() => setMobileMenuOpen(false)}
-            className="block hover:opacity-75 uppercase"
+            className="block hover:opacity-75 uppercase text-[#B8902A]"
           >
-            GROWTH AUDIT
+            FREE AUDIT
           </a>
           <a
-            href="#project-questionnaire"
+            href="#audit"
             onClick={() => setMobileMenuOpen(false)}
             className="block w-full text-center py-2.5 rounded-full bg-[#193A2A] text-[#FAF8F2] font-semibold text-xs tracking-widest uppercase mt-4"
           >
-            START A PROJECT
+            GET FREE AUDIT
           </a>
         </motion.div>
       )}

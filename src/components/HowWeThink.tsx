@@ -120,8 +120,8 @@ export const HowWeThink: React.FC = () => {
             href="#forms"
             className="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#0D2818] uppercase tracking-wider hover:text-[#4A5D4E] transition-colors group"
           >
-            <span>EXPLORE THE APPROACH</span>
-            <ArrowRight className="w-4 h-4 text-[#4A5D4E] group-hover:translate-x-1 transition-transform" />
+            <span>EXPLORE REAL EXAMPLES &amp; METRICS</span>
+            <ArrowRight className="w-4 h-4 text-[#B8902A] group-hover:translate-x-1 transition-transform" />
           </a>
         </div>
 

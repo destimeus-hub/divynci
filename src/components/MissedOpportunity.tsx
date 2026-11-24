@@ -39,7 +39,7 @@ export const MissedOpportunity: React.FC = () => {
             {
               step: "03",
               title: "ACTION",
-              desc: "A initial purchase or booking happens, but the transaction ends without a follow-through.",
+              desc: "An initial purchase or booking happens, but the transaction ends without a follow-through.",
             },
             {
               step: "04",
@@ -69,14 +69,14 @@ export const MissedOpportunity: React.FC = () => {
         {/* RECOGNITION BLOCK & CONTEXTUAL LINK */}
         <div className="p-8 sm:p-12 rounded-3xl bg-[#F4EFEA] border border-[#E5DEC9] text-center space-y-6 max-w-3xl mx-auto">
           <p className="text-lg sm:text-xl font-serif italic text-[#0D2818] leading-relaxed">
-            &quot;Something in our customer journey may be underperforming.&quot;
+            Where is your customer journey leaking: before the click, before the buy, or after it?
           </p>
           <div className="pt-2 flex justify-center">
             <a
-              href="#philosophy"
+              href="#approach"
               className="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#0D2818] uppercase tracking-wider hover:text-[#4A5D4E] transition-colors group"
             >
-              <span>SEE WHAT&apos;S BEING MISSED</span>
+              <span>FIND YOUR LEAK (2 MIN)</span>
               <ArrowRight className="w-4 h-4 text-[#B8902A] group-hover:translate-x-1 transition-transform" />
             </a>
           </div>

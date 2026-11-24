@@ -19,13 +19,23 @@ export const Footer: React.FC = () => {
             </div>
             <div>
               <span className="font-bold tracking-widest text-sm text-[#193A2A]">DIV<span className="text-[#B8902A]">Y</span>NCI</span>
-              <div className="text-[10px] text-[#77766F]">GROWTH & INTERACTIVE STUDIO FOR CONSUMER BRANDS</div>
+              <div className="text-[10px] text-[#77766F]">GROWTH STUDIO FOR D2C & SERVICE BRANDS</div>
             </div>
           </div>
 
-          <div className="flex items-center gap-8 text-[11px] text-[#193A2A]">
-            <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-[#B8902A] inline-block" />14-DAY GUARANTEED DEPLOYMENT</span>
-            <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-[#B8902A] inline-block" />KLAVIYO & SHOPIFY CERTIFIED</span>
+          <div className="flex flex-wrap items-center justify-center gap-6 text-[11px] text-[#193A2A]">
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#B8902A] inline-block" />
+              14-DAY SPRINT · ONE LIVE LOOP
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#B8902A] inline-block" />
+              BUILT FOR SHOPIFY, KLAVIYO & CUSTOM STACKS
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#B8902A] inline-block" />
+              YOU OWN 100% CODE & ZERO-PARTY DATA
+            </span>
           </div>
 
           <button
@@ -37,11 +47,28 @@ export const Footer: React.FC = () => {
           </button>
         </div>
 
-        <div className="pt-8 border-t border-[#DDD7CA] flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#77766F] gap-4">
-          <div>© {new Date().getFullYear()} DIVYNCI INC. ALL RIGHTS RESERVED.</div>
+        {/* Founder & Direct Contact Fallback */}
+        <div className="pt-6 border-t border-[#DDD7CA] flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+          <div className="text-[11px] text-[#193A2A]/80 font-medium space-y-1">
+            <span className="font-bold text-[#193A2A]">Prefer to talk directly?</span>
+            <div className="flex flex-wrap justify-center md:justify-start items-center gap-4 text-[#193A2A] pt-1">
+              <a href="mailto:hello@divynci.com" className="hover:text-[#B8902A] underline underline-offset-4">hello@divynci.com</a>
+              <span>·</span>
+              <a href="https://wa.me/message" target="_blank" rel="noopener noreferrer" className="hover:text-[#B8902A] underline underline-offset-4">WhatsApp Founder Desk</a>
+              <span>·</span>
+              <a href="#audit" className="hover:text-[#B8902A] underline underline-offset-4">Book 20-Min Strategy Call</a>
+            </div>
+          </div>
+          <div className="text-[10px] text-[#77766F] text-center md:text-right">
+            <span>DIVYNCI Studio &middot; New Delhi &amp; Remote &middot; Sprint Slots Limited to 3/Mo</span>
+          </div>
+        </div>
+
+        <div className="pt-6 border-t border-[#DDD7CA] flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#77766F] gap-4">
+          <div>&copy; {new Date().getFullYear()} DIVYNCI INC. ALL RIGHTS RESERVED.</div>
           <div className="flex gap-6">
-            <span>PRIVACY PROTOCOL</span>
-            <span>TERMS OF ENGAGEMENT</span>
+            <a href="#privacy" className="hover:text-[#193A2A] transition-colors">PRIVACY POLICY</a>
+            <a href="#terms" className="hover:text-[#193A2A] transition-colors">TERMS OF SERVICE</a>
           </div>
         </div>
       </div>

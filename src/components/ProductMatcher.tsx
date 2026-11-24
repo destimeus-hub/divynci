@@ -219,31 +219,32 @@ I'd like to discuss the campaign strategy with DIVYNCI.`;
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F5F1E8] border border-[#DED7C9] text-xs font-mono text-[#193A2A]">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>FOUNDER CAMPAIGN DISCOVERY</span>
+            <Sparkles className="w-3.5 h-3.5 text-[#B8902A]" />
+            <span className="font-bold text-[#B8902A]">STEP 2:</span>
+            <span>SCOPE YOUR 14-DAY SPRINT</span>
           </div>
 
           {audit ? (
             <div className="p-4 rounded-2xl bg-[#193A2A] text-[#FAF8F2] text-xs font-mono max-w-xl mx-auto space-y-1 shadow-md">
-              <span className="text-[#A3B899] font-bold block uppercase tracking-wider">
-                WE'VE SEEN THE GAP. NOW TELL US WHAT'S BEHIND IT.
+              <span className="text-[#B8902A] font-bold block uppercase tracking-wider">
+                AUDIT DIAGNOSIS INHERITED
               </span>
               <p className="text-[#DED7C9] font-sans">
-                Audit inherited: <strong>{audit.campaignObj || "Campaign Opportunity"}</strong> ({audit.reach} reach • {audit.action})
+                Diagnosed focus: <strong>{audit.campaignObj || "Campaign Opportunity"}</strong> ({audit.reach} volume • {audit.action})
               </p>
             </div>
           ) : (
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#193A2A] tracking-tight serif-font">
-              Don&apos;t take our word for it. <br />
-              <span className="italic font-normal text-[#416B4F]">Try the experience.</span>
+              Ready to build? <br />
+              <span className="italic font-normal text-[#416B4F]">Scope your sprint in 60 seconds.</span>
             </h2>
           )}
 
           <p className="text-[#193A2A]/80 text-base sm:text-lg font-medium">
-            Give us a brand. We’ll show you what’s possible.
+            Define your audience, goals, and constraints. We&apos;ll formulate the exact 14-day build plan.
           </p>
           <p className="text-[#77766F] text-xs sm:text-sm max-w-xl mx-auto leading-relaxed">
-            You bring the context. We&apos;ll work out the idea, experience, mechanics, and technology to make it happen.
+            Takes under 2 minutes. You receive a structured blueprint and direct calendar booking link with our lead engineer.
           </p>
         </div>
 

@@ -375,17 +375,17 @@ export const Hero: React.FC = () => {
               className="flex flex-col sm:flex-row gap-3 pt-2 w-full sm:w-auto justify-center items-center"
             >
               <a
-                href="#experience"
+                href="#audit"
                 className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#163B2C] text-[#F5F1E8] font-mono font-medium text-[11px] tracking-wider uppercase hover:bg-[#0E271D] border border-[#B8902A]/50 hover:border-[#B8902A] transition-all duration-200 flex items-center justify-center gap-2.5 group shadow-lg ring-1 ring-[#B8902A]/20"
               >
-                <span>BUILD YOUR EXPERIENCE</span>
+                <span>GET FREE GROWTH AUDIT</span>
                 <ArrowRight className="w-3.5 h-3.5 text-[#F5F1E8] group-hover:translate-x-0.5 transition-transform" />
               </a>
               <a
-                href="#range"
+                href="#forms"
                 className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#F5F1E8]/80 backdrop-blur-sm border border-[#C8BFB0]/60 text-[#163B2C] font-mono font-medium text-[11px] tracking-wider uppercase hover:bg-[#EAE4D7] transition-all duration-200 flex items-center justify-center shadow-lg"
               >
-                SEE HOW IT WORKS
+                SEE LIVE EXAMPLES
               </a>
             </motion.div>
           </motion.div>
